@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="554.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="579.0" fitWidth="969.0" layoutX="-83.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/playstation02.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle height="471.0" layoutX="185.0" layoutY="45.0" opacity="0.65" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="519.0" />
+      <TextField fx:id="txtUserName" focusTraversable="false" layoutX="244.0" layoutY="311.0" opacity="0.85" prefHeight="45.0" prefWidth="398.0" promptText="User Name">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="353.0" layoutY="393.0" onAction="#loginOnAction" prefHeight="38.0" prefWidth="189.0" style="-fx-background-color: #21c912;" text="Login">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Circle fill="WHITE" layoutX="449.0" layoutY="201.0" radius="67.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="134.0" fitWidth="134.0" layoutX="382.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/PngItem_1503945.png" />
+         </image>
+      </ImageView>
+      <Label focusTraversable="false" layoutX="407.0" layoutY="56.0" prefHeight="51.0" prefWidth="92.0" text="Login" textFill="WHITE">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Label focusTraversable="false" layoutX="378.0" layoutY="475.0" prefHeight="51.0" prefWidth="159.0" text="Play tech Pvt Ltd" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

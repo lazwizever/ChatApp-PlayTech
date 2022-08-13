@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="773.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChattingFormController">
+   <children>
+      <ImageView fitHeight="826.0" fitWidth="1374.0" layoutX="-573.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bg5.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="638.0" layoutY="684.0" onAction="#sendMessageOnAction" prefHeight="44.0" prefWidth="49.0" style="-fx-background-color: #44bd32; -fx-background-radius: 30;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtMessage" focusColor="BLACK" focusTraversable="false" layoutX="94.0" layoutY="684.0" opacity="0.7" prefHeight="44.0" prefWidth="522.0" promptText="  Message" style="-fx-background-color: white; -fx-background-radius: 30;" unFocusColor="BLACK">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextArea fx:id="messageDescription" focusColor="BLACK" focusTraversable="false" layoutX="96.0" layoutY="73.0" opacity="0.7" prefHeight="581.0" prefWidth="591.0" style="-fx-background-color: white; -fx-background-radius: 20;" unFocusColor="BLACK">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextArea>
+      <ImageView disable="true" fitHeight="33.0" fitWidth="36.0" layoutX="649.0" layoutY="691.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/send.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

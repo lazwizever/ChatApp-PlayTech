@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="javax.inject-1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../SEM_01/Professional Software Project/LibraryManagementSystem/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../SEM_01/Professional Software Project/LibraryManagementSystem/lib/jfoenix-8.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
