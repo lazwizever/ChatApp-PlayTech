@@ -9,29 +9,29 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-    static Socket accept = null;
-
 
     public static void main(String[] args) throws IOException {
-        FileWriter fileWriter = new FileWriter("src/db/DB.txt");
-        ServerSocket serverSocket = new ServerSocket(5000);
-        System.out.println("server created");
-        accept = serverSocket.accept();
-        System.out.println("client connected");
+        final int PORT = 5000;
+        ServerSocket serverSocket = new ServerSocket(PORT);
 
+        new Thread(() -> {
+            try {
 
-        while (true){
+                while (!serverSocket.isClosed()) {
+                    Socket acceptedSocket = serverSocket.accept();
+                    System.out.println("A New Client Connected");
 
-            InputStreamReader isr = new InputStreamReader(accept.getInputStream());
-            BufferedReader bfr = new BufferedReader(isr);
-            String clientRecord = bfr.readLine();
+                    ClientHandler clientsHandler = new ClientHandler(acceptedSocket);
 
-            if (!clientRecord.equals("exit")){
-                fileWriter.write(clientRecord);
-                fileWriter.flush();
+                    new Thread(clientsHandler).start();
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+        }).start();
 
-        }
 
     }
 
