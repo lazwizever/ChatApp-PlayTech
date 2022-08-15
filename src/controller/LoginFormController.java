@@ -15,21 +15,19 @@ public class LoginFormController {
 
     public TextField txtUserName;
 
-    Socket clientSocket = null;
+//    Socket clientSocket = null;
     ArrayList clientArrayList = new ArrayList();
 
 
-
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
-
+            ChattingFormController.userName = txtUserName.getText();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../views/ChattingForm.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();
-
-        clientSocket = new Socket("localhost",5000);
-        clientArrayList.add(txtUserName.getText());
+//        clientSocket = new Socket("localhost",5000);
+        //clientArrayList.add(txtUserName.getText());
     }
 }
 

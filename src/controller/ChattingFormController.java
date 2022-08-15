@@ -3,10 +3,8 @@ package controller;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+
+import java.io.*;
 import java.net.Socket;
 
 public class ChattingFormController {
@@ -16,11 +14,14 @@ public class ChattingFormController {
     Socket accept= null;
     LoginFormController loginFormController;
 
+    static String userName;
+
     public void initialize(){
 
         new Thread(()->{
 
             try {
+                accept = new Socket("localhost",5000);
 
                 //-----------------------------------Print clients' message-----------------
 
@@ -30,7 +31,7 @@ public class ChattingFormController {
                 System.out.println("clientRecord "+clientRecord);
                 //String userName = new LoginFormController().userName;
 
-                while (loginFormController.clientSocket.isConnected()){
+                while (accept.isConnected()){
                     messageDescription.setText(loginFormController.txtUserName.getText()+" : "+clientRecord);
 
                 }
@@ -45,12 +46,27 @@ public class ChattingFormController {
 
 
     public void sendMessageOnAction(ActionEvent actionEvent) throws IOException {
-        PrintWriter printWriter = new PrintWriter(loginFormController.clientSocket.getOutputStream());
-        printWriter.println(txtMessage.getText());
-        System.out.println("text message "+txtMessage.getText());
+        PrintWriter printWriter = new PrintWriter(accept.getOutputStream());
+        printWriter.println(userName+" : "+txtMessage.getText()+"/");
         printWriter.flush();
         txtMessage.clear();
 
+        FileReader fileReader = new FileReader("src/db/DB.txt");
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String record = bufferedReader.readLine();
 
+        String message = null;
+
+        while (record != null ){
+            String[] split = record.split("/");
+            for (String temp : split) {
+                message = (message == null)? temp+"\n" : message+temp+"\n";
+            }
+
+            record = bufferedReader.readLine();
+            System.out.println(message);
+
+        }
+        messageDescription.setText(message);
     }
 }

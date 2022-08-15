@@ -19,7 +19,7 @@ public class AppInitializer extends Application {
     }
 
 
-    public void createServer() throws IOException {
+    /*public void createServer() throws IOException {
         ServerSocket serverSocket = new ServerSocket(5000);
         try {
 
@@ -35,7 +35,7 @@ public class AppInitializer extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
 
