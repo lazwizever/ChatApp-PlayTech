@@ -93,11 +93,13 @@ public class ChattingFormController {
 
                             }else if (chatMessages.startsWith("SERVER")){
 
+                                String[] split = chatMessages.split("SERVER:");
+
                                 HBox hBox = new HBox();
                                 hBox.setAlignment(Pos.CENTER);
                                 hBox.setPadding(new Insets(5, 5, 5, 10));
 
-                                Text text = new Text(chatMessages);
+                                Text text = new Text(split[1]);
                                 TextFlow textFlow = new TextFlow(text);
 
                                 textFlow.setStyle("-fx-font-weight: bold;"+"-fx-background-color:#cf8bf6;" + "-fx-background-radius:10px");

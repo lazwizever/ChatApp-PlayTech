@@ -43,9 +43,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <ScrollPane fx:id="scrollPane" focusTraversable="false" layoutX="52.0" layoutY="29.0" opacity="0.7" prefHeight="638.0" prefWidth="585.0" style="-fx-border-radius: 30; -fx-background-radius: 30;">
+      <ScrollPane fx:id="scrollPane" focusTraversable="false" layoutX="52.0" layoutY="29.0" opacity="0.8" prefHeight="638.0" prefWidth="585.0" style="-fx-border-radius: 30; -fx-background-radius: 30;">
          <content>
-            <VBox fx:id="vBOxMessage" opacity="0.7" prefHeight="627.0" prefWidth="515.0" />
+            <VBox fx:id="vBOxMessage" opacity="0.8" prefHeight="627.0" prefWidth="571.0" />
          </content>
       </ScrollPane>
       <ImageView disable="true" fitHeight="44.0" fitWidth="49.0" layoutX="527.0" layoutY="716.0" pickOnBounds="true" preserveRatio="true">
